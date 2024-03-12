@@ -1,0 +1,17 @@
+#!/bin/bash
+#SBATCH --job-name=problem2_cp_16              # Название задачи
+#SBATCH --error=problem2_cp_16-%j.err          # Файл для вывода ошибок
+#SBATCH --output=problem2_cp_16-%j.log         # Файл для вывода результатов
+#SBATCH --time=02:00:00              # Максимальное время выполнения
+#SBATCH --ntasks=1                   # Количество MPI процессов
+#SBATCH --nodes=1                    # Требуемое кол-во узлов
+#SBATCH --cpus-per-task=16            # Требуемое кол-во CPU
+#SBATCH --constraint="type_a|type_b"   # Предпочтительный тип узлов
+#SBATCH -A proj_1466
+
+export OMP_NUM_THREADS=16
+
+./main < /home/maantonov_1/hw2/problem2/task_4/data/input.txt
+
+
+

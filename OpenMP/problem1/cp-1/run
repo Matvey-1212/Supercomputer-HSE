@@ -1,0 +1,15 @@
+#!/bin/bash
+#SBATCH --job-name=problem1_cp_1              # Название задачи
+#SBATCH --error=problem1_cp_1-%j.err          # Файл для вывода ошибок
+#SBATCH --output=problem1_cp_1-%j.log         # Файл для вывода результатов
+#SBATCH --time=02:00:00                       # Максимальное время выполнения
+#SBATCH --ntasks=1                            # Количество MPI процессов
+#SBATCH --nodes=1                             # Требуемое кол-во узлов
+#SBATCH --cpus-per-task=1                     # Требуемое кол-во CPU
+#SBATCH --constraint="type_a|type_b"          # Предпочтительный тип узлов
+#SBATCH -A proj_1466
+
+./main < /home/maantonov_1/hw2/data/problem_1.txt
+
+
+

@@ -1,0 +1,23 @@
+#!/bin/bash
+#SBATCH --job-name=test              # Название задачи
+#SBATCH --error=several_cpp1-%j.err          # Файл для вывода ошибок
+#SBATCH --output=several_cpp1-%j.log         # Файл для вывода результатов
+#SBATCH --time=02:00:00              # Максимальное время выполнения
+#SBATCH --ntasks=1                   # Количество MPI процессов
+#SBATCH --ntasks-per-node=1
+#SBATCH --nodes=1                    # Требуемое кол-во узлов
+#SBATCH --cpus-per-task=1            # Требуемое кол-во CPU
+#SBATCH --ntasks-per-socket=1
+
+#SBATCH --constraint="type_a"   # Предпочтительный тип узлов
+#SBATCH -A proj_1466
+
+module load openmpi
+
+mpicxx -O3 -o matmul_new.out -march=skylake matmul_new.cpp
+
+
+echo "4008" | mpirun ./matmul_new.out 
+
+
+

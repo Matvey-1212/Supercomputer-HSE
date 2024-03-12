@@ -1,0 +1,19 @@
+#!/bin/bash
+#SBATCH --job-name=test              # Название задачи
+#SBATCH --error=cython-%j.err          # Файл для вывода ошибок
+#SBATCH --output=cython-%j.log         # Файл для вывода результатов
+#SBATCH --time=02:00:00              # Максимальное время выполнения
+#SBATCH --ntasks=1                   # Количество MPI процессов
+#SBATCH --nodes=1                    # Требуемое кол-во узлов
+#SBATCH --cpus-per-task=1            # Требуемое кол-во CPU
+#SBATCH -A proj_1466
+
+module purge
+module load Python
+source deactivate
+source activate my_py_env1
+
+python main.py < /home/maantonov_1/hw1/samples/sample_1.txt
+python main.py < /home/maantonov_1/hw1/samples/sample_2.txt
+python main.py < /home/maantonov_1/hw1/samples/sample_3.txt
+python main.py < /home/maantonov_1/hw1/samples/sample_4.txt

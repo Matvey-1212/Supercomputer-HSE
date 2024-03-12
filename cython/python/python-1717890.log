@@ -1,0 +1,20 @@
+Number of trapezoids: 5000
+AVG Timing: 0.7270064353942871 ms
+Timing: 727.0064353942871 ms
+Answer = 0.7853981617307958
+
+Number of trapezoids: 10000
+AVG Timing: 1.466407060623169 ms
+Timing: 1466.407060623169 ms
+Answer = 0.7853981629808068
+
+Number of trapezoids: 20000
+AVG Timing: 2.91929030418396 ms
+Timing: 2919.29030418396 ms
+Answer = 0.7853981632933074
+
+Number of trapezoids: 40000
+AVG Timing: 5.767745018005371 ms
+Timing: 5767.745018005371 ms
+Answer = 0.7853981633712743
+

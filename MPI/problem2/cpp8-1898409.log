@@ -1,0 +1,8 @@
+world_size: 8
+N: 4008
+Timing: 9.588854688 sec
+Answer[n, n] = 44.16989156368005
+world_size: 8
+N: 4008
+Timing: 9.305183162000001 sec
+Answer[n, n] = 44.16989156368005

@@ -1,0 +1,17 @@
+#!/bin/bash
+#SBATCH --job-name=problem3_cp_32             # Название задачи
+#SBATCH --error=problem3_cp_32-%j.err          # Файл для вывода ошибок
+#SBATCH --output=problem3_cp_32-%j.log         # Файл для вывода результатов
+#SBATCH --time=02:00:00              # Максимальное время выполнения
+#SBATCH --ntasks=1                   # Количество MPI процессов
+#SBATCH --nodes=1                    # Требуемое кол-во узлов
+#SBATCH --cpus-per-task=32            # Требуемое кол-во CPU
+#SBATCH --constraint="type_a|type_b"   # Предпочтительный тип узлов
+#SBATCH -A proj_1466
+
+export OMP_NUM_THREADS=32
+
+./main < /home/maantonov_1/hw2/problem3/data/input.txt
+
+
+

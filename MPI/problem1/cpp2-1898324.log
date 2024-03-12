@@ -1,0 +1,4 @@
+world_size: 2
+N: 2004
+Timing: 1.842142772 sec
+Answer[n, n] = -94.87791247886703
